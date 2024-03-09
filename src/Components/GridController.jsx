@@ -28,8 +28,8 @@ export default function Gridcontroller() {
         clearTimeout(time) // clear previous time
         // set new time after execute below code
         time = setTimeout(()=>{  
-            (textFieldValue >=1 && textFieldValue <= totalPages) ?  dispatch(setCurrentPage(textFieldValue) ) : null;
-        },[50])
+            (textFieldValue >=1 && textFieldValue <= totalPages) ?  dispatch(setCurrentPage(textFieldValue) ) : null ;
+        },[100])
         
     },[textFieldValue])
     

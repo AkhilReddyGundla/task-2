@@ -1,7 +1,7 @@
 import { Button, Box } from '@mui/material';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-quartz.css';
@@ -23,7 +23,6 @@ export default function UserGrid() {
     useMemo(async() => {
         const response = await fetchAllUsers(currentPage);
         setRowData(response.data.data);
-        localStorage.setItem("currentPage",response.data.page)
     }, [currentPage]);
 
     //defining columns for grid

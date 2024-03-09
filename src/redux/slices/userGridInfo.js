@@ -8,8 +8,9 @@ const userGridInfo = createSlice({
     name : "Grid information",
     initialState,
     reducers : {
-        setCurrentPage(state,actions){
-            state.currentPage = actions.payload
+        setCurrentPage(state,action){
+            state.currentPage = action.payload
+            localStorage.setItem('currentPage',action.payload)
         }
     }
 })
