@@ -13,7 +13,7 @@ Here is what you need to be able to run project
 + Node.js
 ## Development 
 ### Setup
-1. Clone the repo into a public GitHub repository (or fork https://github.com/AkhilReddyGundla/RightData-task).
+1. Clone the repo into a public GitHub repository (or fork https://github.com/AkhilReddyGundla/task-2).
 
 2. Install Packages with npm
 ``` npm install ```
