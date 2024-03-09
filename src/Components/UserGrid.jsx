@@ -12,8 +12,8 @@ import { fetchAllUsers } from '../api';
 
 export default function UserGrid() {
 
-    const currentPage = useSelector((state) => state.gridInfo.currentPage); //getting currentPage from 
-
+    const currentPage = useSelector((state) => state.gridInfo.currentPage) || localStorage.getItem("currentPage"); //getting currentPage from 
+    
     const [rowData, setRowData] = useState([]); // creating state for rows in the grid
     const [selectedRowData, setSelectedRowData] = useState(null);//selecting state for only one row
     const [viewButtonOnClick, setViewButtonOnClick] = useState(false); //state for view button
@@ -23,6 +23,7 @@ export default function UserGrid() {
     useMemo(async() => {
         const response = await fetchAllUsers(currentPage);
         setRowData(response.data.data);
+        localStorage.setItem("currentPage",response.data.page)
     }, [currentPage]);
 
     //defining columns for grid
